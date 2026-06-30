@@ -1,0 +1,9 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'family-finance'
+include 'common-contracts', 'auth-service', 'finance-service', 'report-service'

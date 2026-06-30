@@ -1,0 +1,29 @@
+server:
+  port: ${SERVER_PORT:8081}
+
+spring:
+  application:
+    name: auth-service
+  r2dbc:
+    url: ${AUTH_R2DBC_URL:r2dbc:postgresql://localhost:5433/auth_db}
+    username: ${AUTH_DB_USER:finance}
+    password: ${AUTH_DB_PASSWORD:finance}
+  flyway:
+    url: ${AUTH_JDBC_URL:jdbc:postgresql://localhost:5433/auth_db}
+    user: ${AUTH_DB_USER:finance}
+    password: ${AUTH_DB_PASSWORD:finance}
+  jackson:
+    default-property-inclusion: non_null
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-me-change-me-change-me-32-bytes}
+    expiration: ${JWT_EXPIRATION:PT1H}
+  internal-api-key: ${INTERNAL_API_KEY:local-internal-key}
+  allowed-origins: ${ALLOWED_ORIGINS:http://localhost:8083}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

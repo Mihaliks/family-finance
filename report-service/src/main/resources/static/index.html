@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Семейные финансы</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main>
+    <h1>Отчеты по финансам</h1>
+    <section>
+        <h2>Вход</h2>
+        <input id="email" type="email" value="admin@example.com" placeholder="Email">
+        <input id="password" type="password" value="password" placeholder="Пароль">
+        <button id="login">Войти</button>
+        <span id="status"></span>
+    </section>
+    <section>
+        <h2>Параметры отчета</h2>
+        <select id="preset">
+            <option value="MONTH">Текущий месяц</option>
+            <option value="QUARTER">Текущий квартал</option>
+            <option value="YEAR">Текущий год</option>
+            <option value="CUSTOM">Произвольный период</option>
+        </select>
+        <label>С <input id="from" type="date"></label>
+        <label>По <input id="to" type="date"></label>
+        <input id="familyId" placeholder="ID семьи, необязательно">
+        <input id="memberIds" placeholder="ID участников через запятую">
+        <select id="type">
+            <option value="">Доходы и расходы</option>
+            <option value="INCOME">Только доходы</option>
+            <option value="EXPENSE">Только расходы</option>
+        </select>
+        <select id="groupBy">
+            <option value="NONE">Без группировки</option>
+            <option value="CATEGORY">По категориям</option>
+            <option value="USER">По пользователям</option>
+            <option value="TYPE">По типу</option>
+        </select>
+        <button id="load">Построить</button>
+        <button id="csv">Скачать CSV</button>
+    </section>
+    <section>
+        <h2>Результат</h2>
+        <pre id="result">Сначала выполните вход.</pre>
+    </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
