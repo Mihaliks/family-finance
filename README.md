@@ -20,7 +20,7 @@ Docker Compose скачает публичные базовые образы:
 ### Запуск
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Mihaliks/family-finance.git
 cd family-finance
 cp .env.example .env
 docker compose up --build
